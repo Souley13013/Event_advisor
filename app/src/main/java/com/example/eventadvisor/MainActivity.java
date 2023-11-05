@@ -1,16 +1,23 @@
 package com.example.eventadvisor;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
 
     ImageButton monImageButtonSport;
     ImageButton monImageButtonMusique;
+    BottomNavigationView bottomNavigationView;
+
     //FirebaseFirestore firestore;
 
 
@@ -38,7 +45,9 @@ public class MainActivity extends AppCompatActivity {
 */
         monImageButtonSport = (ImageButton) findViewById(R.id.bp_sports);
         monImageButtonMusique = (ImageButton) findViewById(R.id.bp_musique);
+        bottomNavigationView = findViewById(R.id.bottomNav);
 
+        //Gestion du bouton sport
         monImageButtonSport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,10 +56,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Gestion du bouton Musique
         monImageButtonMusique.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentLoadMusiqueActivity = new Intent(MainActivity.this, MusiqueActivity.class);
+                startActivity(intentLoadMusiqueActivity);
+            }
+        });
+
+        //Gestion du bouton HOME
+        bottomNavigationView.setOnItemReselectedListener(new NavigationBarView.OnItemReselectedListener() {
+            @Override
+            public void onNavigationItemReselected(@NonNull MenuItem item) {
+                Intent intentLoadMusiqueActivity = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(intentLoadMusiqueActivity);
             }
         });
