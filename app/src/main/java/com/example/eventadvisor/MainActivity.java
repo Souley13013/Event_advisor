@@ -65,13 +65,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Gestion du bouton HOME
-        bottomNavigationView.setOnItemReselectedListener(new NavigationBarView.OnItemReselectedListener() {
-            @Override
-            public void onNavigationItemReselected(@NonNull MenuItem item) {
-                Intent intentLoadMusiqueActivity = new Intent(MainActivity.this, MainActivity.class);
-                startActivity(intentLoadMusiqueActivity);
-            }
-        });
+
     }
 }
