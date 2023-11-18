@@ -20,6 +20,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <TextView
+                    android:id="@+id/lieuholder"
+                    style="@style/DefaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="lieu --"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/tarifholder"
+                    app:layout_constraintTop_toBottomOf="@+id/tarifholder" />
+
                 <ImageView
                     android:id="@+id/imagegholder"
                     android:layout_width="297dp"
@@ -49,10 +59,10 @@
                     style="@style/DefaultTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="208dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="28dp"
                     android:justificationMode="inter_word"
                     android:padding="5dp"
-                    android:text="Description"
+                    android:text="Description --"
                     app:layout_constraintTop_toBottomOf="@+id/tarifholder"
                     tools:layout_editor_absoluteX="0dp" />
 
@@ -62,8 +72,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:text="Date"
-                    android:textSize="20sp"
+                    android:text="Date --"
+                    android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="@+id/imagegholder"
                     app:layout_constraintTop_toBottomOf="@+id/titreholder" />
 
@@ -72,8 +82,8 @@
                     style="@style/DefaultTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Heure"
-                    android:textSize="20sp"
+                    android:text="Heure --"
+                    android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="@+id/dateholder"
                     app:layout_constraintTop_toBottomOf="@+id/dateholder" />
 
@@ -82,10 +92,11 @@
                     style="@style/DefaultTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tarif"
-                    android:textSize="20sp"
+                    android:text="Tarif --"
+                    android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="@+id/heureholder"
                     app:layout_constraintTop_toBottomOf="@+id/heureholder" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </LinearLayout>

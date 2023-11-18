@@ -2,12 +2,15 @@ package com.example.eventadvisor;
 
 public class modelsport {
 
-    String date,description1,description2,heure,image,tarif,titre;
+    String date,description1,description2,heure,image,tarif,titre, lieu, reserver;
 
     public modelsport() {
     }
 
-    public modelsport(String date, String description1, String description2, String heure, String image, String tarif, String titre) {
+
+
+
+    public modelsport(String date, String description1, String description2, String heure, String image, String tarif, String titre, String lieu, String reserver) {
         this.date = date;
         this.description1 = description1;
         this.description2 = description2;
@@ -15,6 +18,23 @@ public class modelsport {
         this.image = image;
         this.tarif = tarif;
         this.titre = titre;
+        this.lieu = lieu;
+        this.reserver = reserver;
+    }
+    public String getReserver() {
+        return reserver;
+    }
+
+    public void setReserver(String reserver) {
+        this.reserver = reserver;
+    }
+
+    public String getLieu() {
+        return lieu;
+    }
+
+    public void setLieu(String lieu) {
+        this.lieu = lieu;
     }
 
     public String getDate() {

@@ -2,12 +2,14 @@ package com.example.eventadvisor;
 
 public class modelmusique {
 
-    String date,description1,description2,heure,image,tarif,titre, artiste, lien;
+    String date,description1,description2,heure,image,tarif,titre, artiste, lien,lieu;
 
     public modelmusique() {
     }
 
-    public modelmusique(String date, String description1, String description2, String heure, String image, String tarif, String titre, String artiste, String lien) {
+
+
+    public modelmusique(String date, String description1, String description2, String heure, String image, String tarif, String titre, String artiste, String lien, String lieu) {
         this.date = date;
         this.description1 = description1;
         this.description2 = description2;
@@ -17,7 +19,16 @@ public class modelmusique {
         this.titre = titre;
         this.artiste = artiste;
         this.lien = lien;
+        this.lieu = lieu;
 
+    }
+
+    public String getLieu() {
+        return lieu;
+    }
+
+    public void setLieu(String lieu) {
+        this.lieu = lieu;
     }
 
     public String getDate() {

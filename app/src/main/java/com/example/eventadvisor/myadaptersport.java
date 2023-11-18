@@ -30,7 +30,7 @@ public class myadaptersport extends FirebaseRecyclerAdapter<modelsport, myadapte
             @Override
             public void onClick(View view) {
                 AppCompatActivity activity=(AppCompatActivity) view.getContext();
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.wrapper, new descfragmentsport(model.getTitre(),model.getDescription2(),model.getImage(),model.getDate(), model.getHeure(), model.getTarif())).addToBackStack(null).commit();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.wrapper, new descfragmentsport(model.getTitre(),model.getDescription2(),model.getImage(),model.getDate(), model.getHeure(), model.getTarif(), model.getLieu(), model.getReserver())).addToBackStack(null).commit();
             }
         });
     }

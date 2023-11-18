@@ -30,7 +30,7 @@ public class myadaptermusique extends FirebaseRecyclerAdapter<modelmusique,myada
             @Override
             public void onClick(View view) {
                 AppCompatActivity activity=(AppCompatActivity) view.getContext();
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.wrapper2, new descfragmentmusique(model.getTitre(),model.getDescription2(),model.getImage(),model.getDate(), model.getHeure(), model.getTarif())).addToBackStack(null).commit();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.wrapper2, new descfragmentmusique(model.getTitre(),model.getDescription2(),model.getImage(),model.getDate(), model.getHeure(), model.getTarif(), model.getLieu())).addToBackStack(null).commit();
             }
         });
 

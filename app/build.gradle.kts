@@ -41,6 +41,7 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore:24.9.1")
 
     implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

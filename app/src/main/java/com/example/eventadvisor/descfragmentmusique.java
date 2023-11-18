@@ -22,19 +22,20 @@ public class descfragmentmusique extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    String titre, description2, image, date, heure, tarif;
+    String titre, description2, image, date, heure, tarif, lieu;
 
     public descfragmentmusique() {
 
     }
 
-    public descfragmentmusique(String titre, String description2, String image, String date, String heure, String tarif) {
+    public descfragmentmusique(String titre, String description2, String image, String date, String heure, String tarif, String lieu) {
         this.titre=titre;
         this.description2=description2;
         this.image=image;
         this.date=date;
         this.heure=heure;
         this.tarif=tarif;
+        this.lieu=lieu;
 
     }
 
@@ -68,12 +69,14 @@ public class descfragmentmusique extends Fragment {
         TextView dateholder = view.findViewById(R.id.dateholder);
         TextView heureholder = view.findViewById(R.id.heureholder);
         TextView tarifholder = view.findViewById(R.id.tarifholder);
+        TextView lieuholder = view.findViewById(R.id.lieuholder);
 
         titreholder.setText(titre);
         descriptionholder.setText(description2);
         dateholder.setText(date);
         heureholder.setText(heure);
         tarifholder.setText(tarif);
+        lieuholder.setText(lieu);
 
         Glide.with(getContext()).load(image).into(imageholder);
 
