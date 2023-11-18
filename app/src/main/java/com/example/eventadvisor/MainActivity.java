@@ -11,6 +11,9 @@ import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,36 +21,25 @@ public class MainActivity extends AppCompatActivity {
     ImageButton monImageButtonMusique;
     BottomNavigationView bottomNavigationView;
 
-    //FirebaseFirestore firestore;
+    //Firebase
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("message");
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-/*
-        firestore = FirebaseFirestore.getInstance();
 
-        Map<String,Object> users = new HashMap<>();
-        users.put("firstName","Test");
+        //Test
+        myRef.setValue("Test");
 
-        firestore.collection("users").add(users).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-            @Override
-            public void onSuccess(DocumentReference documentReference) {
-                Toast.makeText(getApplicationContext(),"Sucess",Toast.LENGTH_LONG).show();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getApplicationContext(),"Failure",Toast.LENGTH_LONG).show();
-            }
-        });
-*/
         monImageButtonSport = (ImageButton) findViewById(R.id.bp_sports);
         monImageButtonMusique = (ImageButton) findViewById(R.id.bp_musique);
         bottomNavigationView = findViewById(R.id.bottomNav);
 
         //Gestion du bouton sport
+
         monImageButtonSport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentLoadSportActivity);
             }
         });
+
 
         //Gestion du bouton Musique
         monImageButtonMusique.setOnClickListener(new View.OnClickListener() {
@@ -67,4 +60,5 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 }

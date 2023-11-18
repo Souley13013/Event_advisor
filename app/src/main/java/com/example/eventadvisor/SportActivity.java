@@ -4,24 +4,40 @@ import static android.widget.Toast.makeText;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class SportActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     ImageButton monImageButtonReturnSport;
+
+    //injecter le fragment dans notre boite (fragment_container)
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sport);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.wrapper, new recfragment()).commit();
+
+
 
         bottomNavigationView = findViewById(R.id.bottomNav);
         monImageButtonReturnSport = (ImageButton) findViewById(R.id.button_return_sport);
