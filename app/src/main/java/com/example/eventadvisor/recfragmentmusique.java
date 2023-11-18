@@ -13,23 +13,24 @@ import android.view.ViewGroup;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
-
-public class recfragment extends Fragment {
+public class recfragmentmusique extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
     private String mParam1;
     private String mParam2;
-    RecyclerView recview;
-    myadapter adapter;
 
-    public recfragment() {
+    RecyclerView recview2;
+    myadaptermusique adapter;
+
+    public recfragmentmusique() {
 
     }
 
-    public static recfragment newInstance(String param1, String param2) {
-        recfragment fragment = new recfragment();
+
+    public static recfragmentmusique newInstance(String param1, String param2) {
+        recfragmentmusique fragment = new recfragmentmusique();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -49,18 +50,19 @@ public class recfragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view =  inflater.inflate(R.layout.fragment_recfragmentmusique, container, false);
+        recview2=(RecyclerView) view.findViewById(R.id.recview2);
+        recview2.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        View view = inflater.inflate(R.layout.fragment_recfragment, container, false);
-        recview=(RecyclerView) view.findViewById(R.id.recview);
-        recview.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        FirebaseRecyclerOptions<model> options =
-                new FirebaseRecyclerOptions.Builder<model>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Sport"), model.class)
+        FirebaseRecyclerOptions<modelmusique> options =
+                new FirebaseRecyclerOptions.Builder<modelmusique>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Musique"), modelmusique.class)
                         .build();
 
-        adapter = new myadapter(options);
-        recview.setAdapter(adapter);
+
+        adapter = new myadaptermusique(options);
+        recview2.setAdapter(adapter);
 
         return view;
     }
@@ -75,5 +77,4 @@ public class recfragment extends Fragment {
         super.onStop();
         adapter.stopListening();
     }
-
 }

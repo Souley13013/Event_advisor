@@ -55,4 +55,5 @@ dependencies {
     //
     implementation("com.firebaseui:firebase-ui-database:8.0.2")
     implementation("com.github.bumptech.glide:glide:4.11.0")
+    implementation("me.biubiubiu.justifytext:library:1.1")
 }

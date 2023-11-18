@@ -24,8 +24,10 @@ public class MusiqueActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_musique);
 
+        getSupportFragmentManager().beginTransaction().replace(R.id.wrapper2, new recfragmentmusique()).commit();
+
         bottomNavigationView = findViewById(R.id.bottomNav);
-        monImageButtonReturnMusique = (ImageButton) findViewById(R.id.button_return_musique);
+        //monImageButtonReturnMusique = (ImageButton) findViewById(R.id.button_return_musique);
 
         //Gestion du bouton HOME
         bottomNavigationView.setOnItemReselectedListener(new NavigationBarView.OnItemReselectedListener() {
@@ -37,6 +39,7 @@ public class MusiqueActivity extends AppCompatActivity {
             }
         });
 
+        /*INUTILE D'UTILISER UN BOUTON RETOUR --- LE TELEPHONE LE FAIT DEJA
         monImageButtonReturnMusique.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,6 +49,8 @@ public class MusiqueActivity extends AppCompatActivity {
                 makeText(getApplicationContext(),"From musique activity to main", Toast.LENGTH_LONG).show();
             }
         });
+
+         */
 
 
     }

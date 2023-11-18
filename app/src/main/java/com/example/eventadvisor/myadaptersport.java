@@ -7,29 +7,38 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewholder> {
+public class myadaptersport extends FirebaseRecyclerAdapter<modelsport, myadaptersport.myviewholder> {
 
-    public myadapter(@NonNull FirebaseRecyclerOptions<model> options) {
+    public myadaptersport(@NonNull FirebaseRecyclerOptions<modelsport> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull model model) {
+    protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull modelsport model) {
         holder.name_item.setText(model.getTitre());
         holder.description_item.setText(model.getDescription1());
         Glide.with(holder.image_item.getContext()).load(model.getImage()).into(holder.image_item);//ICI
+
+        holder.image_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AppCompatActivity activity=(AppCompatActivity) view.getContext();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.wrapper, new descfragmentsport(model.getTitre(),model.getDescription2(),model.getImage(),model.getDate(), model.getHeure(), model.getTarif())).addToBackStack(null).commit();
+            }
+        });
     }
 
     @NonNull
     @Override
     public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_vertical_sport, parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_vertical, parent,false);
         return new myviewholder(view);
     }
 

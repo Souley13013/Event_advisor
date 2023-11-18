@@ -1,13 +1,13 @@
 package com.example.eventadvisor;
 
-public class model {
+public class modelmusique {
 
-    String date,description1,description2,heure,image,tarif,titre;
+    String date,description1,description2,heure,image,tarif,titre, artiste, lien;
 
-    public model() {
+    public modelmusique() {
     }
 
-    public model(String date, String description1, String description2, String heure, String image, String tarif, String titre) {
+    public modelmusique(String date, String description1, String description2, String heure, String image, String tarif, String titre, String artiste, String lien) {
         this.date = date;
         this.description1 = description1;
         this.description2 = description2;
@@ -15,6 +15,9 @@ public class model {
         this.image = image;
         this.tarif = tarif;
         this.titre = titre;
+        this.artiste = artiste;
+        this.lien = lien;
+
     }
 
     public String getDate() {
@@ -71,5 +74,21 @@ public class model {
 
     public void setTitre(String titre) {
         this.titre = titre;
+    }
+
+    public String getArtiste() {
+        return artiste;
+    }
+
+    public void setArtiste(String artiste) {
+        this.artiste = artiste;
+    }
+
+    public String getLien() {
+        return lien;
+    }
+
+    public void setLien(String lien) {
+        this.lien = lien;
     }
 }

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".descfragmentsport">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imagegholder"
+                    android:layout_width="297dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="132dp"
+                    android:src="@color/common_google_signin_btn_text_dark_disabled"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/titreholder"
+                    style="@style/SubTitleTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="TITRE"
+                    android:textSize="25sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imagegholder"
+                    app:layout_constraintVertical_bias="0.059" />
+
+                <TextView
+                    android:id="@+id/descriptionholder"
+                    style="@style/DefaultTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="208dp"
+                    android:layout_marginTop="24dp"
+                    android:justificationMode="inter_word"
+                    android:padding="5dp"
+                    android:text="Description"
+                    app:layout_constraintTop_toBottomOf="@+id/tarifholder"
+                    tools:layout_editor_absoluteX="0dp" />
+
+                <TextView
+                    android:id="@+id/dateholder"
+                    style="@style/DefaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Date"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@+id/imagegholder"
+                    app:layout_constraintTop_toBottomOf="@+id/titreholder" />
+
+                <TextView
+                    android:id="@+id/heureholder"
+                    style="@style/DefaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Heure"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@+id/dateholder"
+                    app:layout_constraintTop_toBottomOf="@+id/dateholder" />
+
+                <TextView
+                    android:id="@+id/tarifholder"
+                    style="@style/DefaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tarif"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@+id/heureholder"
+                    app:layout_constraintTop_toBottomOf="@+id/heureholder" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

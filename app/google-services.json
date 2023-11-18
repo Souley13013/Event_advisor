@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "572833188092",
+    "firebase_url": "https://event-advisor-64c8a-default-rtdb.firebaseio.com",
+    "project_id": "event-advisor-64c8a",
+    "storage_bucket": "event-advisor-64c8a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572833188092:android:9cfa539293eff3efd0ef79",
+        "android_client_info": {
+          "package_name": "com.example.eventadvisor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaFeiyQXAjFhVk1PfXqK5i14nOKLnDybk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
