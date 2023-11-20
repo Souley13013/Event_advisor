@@ -1,5 +1,7 @@
 package com.example.eventadvisor;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -71,6 +74,8 @@ public class descfragmentsport extends Fragment {
         TextView tarifholder = view.findViewById(R.id.tarifholder);
         TextView lieuholder = view.findViewById(R.id.lieuholder);
 
+
+        //AFFECTATION DES NOUVEAUX CHAMPS
         titreholder.setText(titre);
         descriptionholder.setText(description2);
         dateholder.setText(date);
@@ -79,6 +84,22 @@ public class descfragmentsport extends Fragment {
         lieuholder.setText(lieu);
 
         Glide.with(getContext()).load(image).into(imageholder);
+
+        //GESTION DU BOUTON RESERVATION
+        Button res;
+        res = view.findViewById(R.id.reserverholder);
+        res.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoUrl(reserver);
+            }
+
+            private void gotoUrl(String s) {
+                Uri uri = Uri.parse(s);
+                startActivity(new Intent(Intent.ACTION_VIEW,uri));
+            }
+        });
+
         return view;
 
     }

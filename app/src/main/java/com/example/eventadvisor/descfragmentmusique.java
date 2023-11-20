@@ -1,5 +1,7 @@
 package com.example.eventadvisor;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,13 +25,13 @@ public class descfragmentmusique extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    String titre, description2, image, date, heure, tarif, lieu;
+    String titre, description2, image, date, heure, tarif, lieu, reserver;
 
     public descfragmentmusique() {
 
     }
 
-    public descfragmentmusique(String titre, String description2, String image, String date, String heure, String tarif, String lieu) {
+    public descfragmentmusique(String titre, String description2, String image, String date, String heure, String tarif, String lieu, String reserver) {
         this.titre=titre;
         this.description2=description2;
         this.image=image;
@@ -36,6 +39,7 @@ public class descfragmentmusique extends Fragment {
         this.heure=heure;
         this.tarif=tarif;
         this.lieu=lieu;
+        this.reserver=reserver;
 
     }
 
@@ -71,6 +75,7 @@ public class descfragmentmusique extends Fragment {
         TextView tarifholder = view.findViewById(R.id.tarifholder);
         TextView lieuholder = view.findViewById(R.id.lieuholder);
 
+        //AFFECTATION DES NOUVEAUX CHAMPS
         titreholder.setText(titre);
         descriptionholder.setText(description2);
         dateholder.setText(date);
@@ -79,6 +84,21 @@ public class descfragmentmusique extends Fragment {
         lieuholder.setText(lieu);
 
         Glide.with(getContext()).load(image).into(imageholder);
+
+        //GESTION DU BOUTON RESERVATION
+        Button res;
+        res = view.findViewById(R.id.reserverholder);
+        res.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoUrl(reserver);
+            }
+
+            private void gotoUrl(String s) {
+                Uri uri = Uri.parse(s);
+                startActivity(new Intent(Intent.ACTION_VIEW,uri));
+            }
+        });
 
         return view;
     }

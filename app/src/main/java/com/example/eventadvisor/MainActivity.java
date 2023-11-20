@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Firebase
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("message");
+    DatabaseReference myRef = database.getReference("APPLICATION CHECK");
 
 
     @Override
