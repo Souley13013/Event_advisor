@@ -1,56 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:paddingTop="130dp"
+    android:paddingBottom="80dp"
     android:layout_height="match_parent"
     tools:context=".descfragmentsport">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="0dp">
 
-                <TextView
-                    android:id="@+id/description"
-                    style="@style/SubTitleTextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="5dp"
-                    android:text="Description"
-                    app:layout_constraintBottom_toTopOf="@+id/descriptionholder"
-                    app:layout_constraintStart_toStartOf="parent" />
 
-                <TextView
-                    android:id="@+id/lieuholder"
-                    style="@style/DefaultTextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="lieu --"
-                    android:textSize="16sp"
-                    app:layout_constraintStart_toStartOf="@+id/tarifholder"
-                    app:layout_constraintTop_toBottomOf="@+id/tarifholder" />
-
-                <ImageView
+                <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/imagegholder"
-                    android:layout_width="297dp"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="132dp"
+                    android:layout_width="280dp"
+                    android:layout_height="180dp"
+                    android:layout_marginTop="16dp"
+                    android:adjustViewBounds="true"
                     android:background="@drawable/custom_image"
                     android:src="@color/common_google_signin_btn_text_dark_disabled"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.496"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/roundimageview" />
 
                 <TextView
                     android:id="@+id/titreholder"
@@ -58,33 +43,35 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TITRE"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imagegholder"
-                    app:layout_constraintVertical_bias="0.038" />
+                    app:layout_constraintVertical_bias="0.029" />
 
                 <TextView
-                    android:id="@+id/descriptionholder"
-                    style="@style/DefaultTextStyle"
+                    android:id="@+id/description2"
+                    style="@style/SubTitleTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="116dp"
-                    android:justificationMode="inter_word"
-                    android:padding="5dp"
-                    android:text="Description --"
-                    app:layout_constraintTop_toBottomOf="@+id/tarifholder"
-                    tools:layout_editor_absoluteX="0dp" />
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="5dp"
+                    android:text="ℹ️ Toutes les informations "
+                    app:layout_constraintBottom_toTopOf="@+id/dateholder"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titreholder"
+                    app:layout_constraintVertical_bias="0.583" />
 
                 <TextView
                     android:id="@+id/dateholder"
                     style="@style/DefaultTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="48dp"
                     android:text="Date --"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="@+id/imagegholder"
                     app:layout_constraintTop_toBottomOf="@+id/titreholder" />
 
@@ -94,7 +81,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Heure --"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="@+id/dateholder"
                     app:layout_constraintTop_toBottomOf="@+id/dateholder" />
 
@@ -104,25 +91,88 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tarif --"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="@+id/heureholder"
                     app:layout_constraintTop_toBottomOf="@+id/heureholder" />
+
+                <TextView
+                    android:id="@+id/lieuholder"
+                    style="@style/DefaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="lieu --"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/tarifholder"
+                    app:layout_constraintTop_toBottomOf="@+id/tarifholder" />
+
+
+                <TextView
+                    android:id="@+id/description"
+                    style="@style/SubTitleTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Description"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lieuholder" />
+
+                <TextView
+                    android:id="@+id/descriptionholder"
+                    style="@style/DefaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:justificationMode="inter_word"
+                    android:padding="5dp"
+                    android:text="Description --"
+                    app:layout_constraintTop_toBottomOf="@+id/description"
+                    tools:layout_editor_absoluteX="0dp" />
+
+                <TextView
+                    android:id="@+id/description3"
+                    style="@style/SubTitleTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="36dp"
+                    android:text="🎟️ Réservez votre billet dès maintenant"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.495"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/descriptionholder" />
 
                 <android.widget.Button
                     android:id="@+id/reserverholder"
                     style="@style/SubTitleTextStyle"
-                    android:layout_width="160dp"
+                    android:layout_width="110dp"
                     android:layout_height="40dp"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/custom_button"
-                    android:text="Reservation de Billets"
+                    android:text="Réservation"
                     android:textColor="@color/white"
-                    android:textSize="13dp"
-                    app:layout_constraintStart_toEndOf="@+id/description"
-                    app:layout_constraintTop_toBottomOf="@+id/lieuholder" />
+                    android:textSize="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/description3" />
+
+                <TextView
+                    android:id="@+id/marge"
+                    style="@style/SubTitleTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/reserverholder" />
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </LinearLayout>
-    </LinearLayout>
-</FrameLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
