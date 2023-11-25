@@ -26,6 +26,22 @@ public class myadaptersport extends FirebaseRecyclerAdapter<modelsport, myadapte
         holder.description_item.setText(model.getDescription1());
         Glide.with(holder.image_item.getContext()).load(model.getImage()).into(holder.image_item);//ICI
 
+
+        /**Gestion du clique pour ouvrir la page de description**/
+        holder.name_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AppCompatActivity activity=(AppCompatActivity) view.getContext();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.wrapper, new descfragmentsport(model.getTitre(),model.getDescription2(),model.getImage(),model.getDate(), model.getHeure(), model.getTarif(), model.getLieu(), model.getReserver())).addToBackStack(null).commit();
+            }
+        });
+        holder.description_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AppCompatActivity activity=(AppCompatActivity) view.getContext();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.wrapper, new descfragmentsport(model.getTitre(),model.getDescription2(),model.getImage(),model.getDate(), model.getHeure(), model.getTarif(), model.getLieu(), model.getReserver())).addToBackStack(null).commit();
+            }
+        });
         holder.image_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,6 +49,7 @@ public class myadaptersport extends FirebaseRecyclerAdapter<modelsport, myadapte
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.wrapper, new descfragmentsport(model.getTitre(),model.getDescription2(),model.getImage(),model.getDate(), model.getHeure(), model.getTarif(), model.getLieu(), model.getReserver())).addToBackStack(null).commit();
             }
         });
+        /************************************************************/
     }
 
     @NonNull
